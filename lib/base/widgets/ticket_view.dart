@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
+import 'package:ticket_app/base/widgets/layout_builder_widget.dart';
 import 'package:ticket_app/base/widgets/two_dots.dart';
 
 class TicketView extends StatelessWidget {
@@ -33,17 +34,12 @@ class TicketView extends StatelessWidget {
                     child: Stack(
                   children: [
                     SizedBox(
-                      child: Text(
-                        '-----------------',
-                        style: TextStyle(color: Colors.white),
-                      ),
+                      height: 24,
+                      child: LayoutBuilderWidget(randomDivider: 6),
                     ),
-                    Center(
-                      child: Text(
-                        'Plane',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    )
+                    // Center(
+                    //     child: Text('Plane',
+                    //         style: TextStyle(color: Colors.white)))
                   ],
                 )),
                 const TwoDots(),
