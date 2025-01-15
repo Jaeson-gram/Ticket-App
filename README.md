@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ticket_app
 
 A new Flutter project.
@@ -14,3 +15,7 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+=======
+# Ticket-App
+A simple ticketing app
+>>>>>>> d7f11d8189ca793db2cf65ea433bbe09ab2b46d7
