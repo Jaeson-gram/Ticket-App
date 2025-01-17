@@ -9,6 +9,7 @@ class AppStyles {
   // static Color linkColor = const Color.fromARGB(255, 84, 108, 176);
   static Color iconsColor = const Color(0xFFBFC205);
   static Color ticketBlue = const Color(0xFF526799);
+  static Color ticketOrange = const Color(0xfff37b67);
 
   //textstyles
   static TextStyle textStyle =
@@ -21,7 +22,10 @@ class AppStyles {
       TextStyle(fontSize: 21, fontWeight: FontWeight.bold, color: textColor);
 
   static TextStyle headlineStyle3 =
-      const TextStyle(fontSize: 20, fontWeight: FontWeight.w500);
+      const TextStyle(fontSize: 18, fontWeight: FontWeight.w500);
+
+        static TextStyle headlineStyle4 =
+      const TextStyle(fontSize: 14, fontWeight: FontWeight.w500);
 
   // static TextStyle linkStyle =
   //     TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: linkColor);
