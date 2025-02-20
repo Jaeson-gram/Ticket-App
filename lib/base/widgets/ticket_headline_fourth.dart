@@ -12,7 +12,7 @@ class TicketHeadlineFourth extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 100,
-      child: Text('Port-Harcourt',
+      child: Text(text,
           textAlign: align,
           style: AppStyles.headlineStyle4.copyWith(color: Colors.white)),
     );

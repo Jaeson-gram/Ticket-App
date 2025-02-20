@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
+import 'package:ticket_app/base/utils/app_routes.dart';
+// import 'package:ticket_app/screens/all_tickets_screen.dart';
 
 class DoubleText extends StatelessWidget {
-  const DoubleText({super.key, required this.bigText, required this.smallText});
+  const DoubleText({super.key, required this.bigText, required this.smallText, required this.func});
   final String bigText;
   final String smallText;
+  final VoidCallback? func;
 
   @override
   Widget build(BuildContext context) {
@@ -13,13 +16,14 @@ class DoubleText extends StatelessWidget {
       children: [
         Text(bigText, style: AppStyles.headlineStyle2),
         InkWell(
-          onTap: () {
-          },
-          child: Text(smallText, style: AppStyles.textStyle.copyWith(color: AppStyles.primaryColor)),
+          onTap: func,
+          child: Text(smallText,
+              style:
+                  AppStyles.textStyle.copyWith(color: AppStyles.primaryColor)),
         )
       ],
     );
-  } 
+  }
 }
 
 // class SomeClass {

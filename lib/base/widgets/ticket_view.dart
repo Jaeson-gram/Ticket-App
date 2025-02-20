@@ -8,7 +8,10 @@ import 'package:ticket_app/base/widgets/ticket_headline_third.dart';
 import 'package:ticket_app/base/widgets/two_dots.dart';
 
 class TicketView extends StatelessWidget {
-  const TicketView({super.key});
+  final Map<String, dynamic> ticket;
+  // final bool wholeScreen;
+
+  const TicketView({super.key, required this.ticket}); // , this.wholeScreen = false
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +21,7 @@ class TicketView extends StatelessWidget {
       width: size.width * 0.85,
       height: 189, //will be the same height regardless of the screen size
       child: Container(
-        margin: const EdgeInsets.only(right: 16, left: 10),
+        margin: const EdgeInsets.only(right: 16, left: 10), // wholeScreen == true ? 0 : 16,
         child: Column(
           children: [
             //Blue part of the ticket
@@ -35,7 +38,7 @@ class TicketView extends StatelessWidget {
                   Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const TicketHeadlineThird(text: 'PH'),
+                      TicketHeadlineThird(text: ticket["from"]["code"]),
                       Expanded(child: Container()),
                       const TwoDots(),
                       Expanded(
@@ -54,7 +57,7 @@ class TicketView extends StatelessWidget {
                       )),
                       const TwoDots(),
                       Expanded(child: Container()),
-                      const TicketHeadlineThird(text: 'ABJ')
+                      TicketHeadlineThird(text: ticket["to"]["code"])
                     ],
                   ),
                   const SizedBox(height: 3),
@@ -62,14 +65,14 @@ class TicketView extends StatelessWidget {
                   Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const TicketHeadlineFourth(text: 'Port Harcourt'),
+                      TicketHeadlineFourth(text: ticket["from"]["name"]),
                       Expanded(child: Container()),
-                      Text('8H 02M',
+                      Text(ticket["flying_time"],
                           style: AppStyles.headlineStyle4
                               .copyWith(color: Colors.white)),
                       Expanded(child: Container()),
-                      const TicketHeadlineFourth(
-                          text: 'Abuja', align: TextAlign.end)
+                      TicketHeadlineFourth(
+                          text: ticket["to"]["name"], align: TextAlign.end)
                     ],
                   ),
                 ],
@@ -103,22 +106,24 @@ class TicketView extends StatelessWidget {
                   borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(21),
                       bottomRight: Radius.circular(21))),
-              child: const Column(
+              child: Column(
                 children: [
                   //Departure and destination with airplane icon
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       TicketColumnLayoutText(
-                          topText: '03 April', bottomText: 'Date', widgetCrossAxisAlignment: CrossAxisAlignment.start),
+                          topText: ticket["date"],
+                          bottomText: 'Date',
+                          widgetCrossAxisAlignment: CrossAxisAlignment.start),
 
                       TicketColumnLayoutText(
-                          topText: '08:30 AM',
+                          topText: ticket["departure_time"],
                           bottomText: 'Departure time',
                           widgetCrossAxisAlignment: CrossAxisAlignment.center),
 
                       TicketColumnLayoutText(
-                          topText: '023',
+                          topText: ticket["number"].toString(),
                           bottomText: 'Flight no.',
                           widgetCrossAxisAlignment: CrossAxisAlignment.end),
 
