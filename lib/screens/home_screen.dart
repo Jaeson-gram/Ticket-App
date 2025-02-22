@@ -6,6 +6,7 @@ import 'package:ticket_app/base/utils/app_json.dart';
 import 'package:ticket_app/base/utils/app_routes.dart';
 import 'package:ticket_app/base/widgets/double_text.dart';
 import 'package:ticket_app/base/widgets/ticket_view.dart';
+import 'package:ticket_app/screens/widgets/hotel.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -20,6 +21,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             const SizedBox(height: 25),
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -88,8 +90,23 @@ class HomeScreen extends StatelessWidget {
                       .toList(),
                 )),
             const SizedBox(height: 20),
+            // DoubleText(
+            //     bigText: 'Hotels', smallText: 'View all', func: () => {}),
+            // const SizedBox(
+            //   height: 20,
+            // ),
+            // const SizedBox(height: 20),
             DoubleText(
                 bigText: 'Hotels', smallText: 'View all', func: () => {}),
+            const SizedBox(height: 20),
+// Set desired width
+            SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: hotelList
+                      .map((singleHotel) => Hotel(hotel: singleHotel))
+                      .toList(),
+                )),
           ],
         ),
       ),
