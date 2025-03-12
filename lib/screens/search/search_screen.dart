@@ -40,7 +40,7 @@ class SearchScreen extends StatelessWidget {
             height: 15,
           ),
           Row(children: [
-            Container(
+            Container(  // SOMETHING'S WRONG HERE. FIX IT. THE WIDTH OVERFLOWS. WHY?
               width: size.width *
                   42, //42 percenet of the screen. the other container will take 42, and the edges will have a 16' padding
               padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
