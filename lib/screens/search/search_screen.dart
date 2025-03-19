@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:ticket_app/base/res/media.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
 import 'package:ticket_app/base/utils/app_routes.dart';
 import 'package:ticket_app/base/widgets/double_text.dart';
 import 'package:ticket_app/screens/search/widgets/app_text_icon.dart';
 import 'package:ticket_app/screens/search/widgets/find_tickets.dart';
+import 'package:ticket_app/screens/search/widgets/search_screen_promotion.dart';
 import 'package:ticket_app/screens/search/widgets/tabs.dart';
 
 class SearchScreen extends StatelessWidget {
@@ -11,8 +13,6 @@ class SearchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-
     return Scaffold(
       backgroundColor: AppStyles.bgColor,
       body: ListView(
@@ -39,24 +39,7 @@ class SearchScreen extends StatelessWidget {
           const SizedBox(
             height: 15,
           ),
-          Row(children: [
-            Container(  // SOMETHING'S WRONG HERE. FIX IT. THE WIDTH OVERFLOWS. WHY?
-              width: size.width *
-                  42, //42 percenet of the screen. the other container will take 42, and the edges will have a 16' padding
-              padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadiusDirectional.circular(20),
-                  color: Colors.white,
-                  boxShadow: [
-                    BoxShadow(
-                        color: Colors.grey.shade300,
-                        blurRadius: .7,
-                        spreadRadius: 2.4)
-                  ]),
-              child: const Column(),
-            ),
-          ])
+          const SearchScreenPromotion()
         ],
       ),
     );
